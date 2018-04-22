@@ -15,23 +15,11 @@ export class SubmittedPage {
   // should be each tab's root Page
   constructor(public navCtrl: NavController) {
   }
-  goToCareForCarsonCityNV(params){
-    if (!params) params = {};
-    this.navCtrl.push(CareForCarsonCityNVPage);
-  }goToMeals(params){
-    if (!params) params = {};
-    this.navCtrl.push(MealsPage);
-  }goToBasket(params){
-    if (!params) params = {};
-    this.navCtrl.push(BasketPage);
-  }goToSubmitted(params){
-    if (!params) params = {};
-    this.navCtrl.push(SubmittedPage);
-  }goToPetFood(params){
-    if (!params) params = {};
-    this.navCtrl.push(PetFoodPage);
-  }goToAssistance(params){
-    if (!params) params = {};
-    this.navCtrl.push(AssistancePage);
+    ionViewCanLeave() : boolean{
+      return false;
+  }
+  goToHome(){
+    //TODO cannot currently nav back to home because ionViewCanLeave is false... fix this
+    this.navCtrl.goToRoot()
   }
 }
