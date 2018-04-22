@@ -12,7 +12,7 @@ import { FreshdeskProvider } from '../../providers/freshdesk';
 @Component({
   selector: 'page-meals',
   templateUrl: 'meals.html',
-  providers: [BasketService, FreshdeskProvider]
+  providers: [FreshdeskProvider]
 })
 
 export class MealsPage {
@@ -21,7 +21,7 @@ export class MealsPage {
   constructor(
     public navCtrl: NavController,
     private service : BasketService
-  )  
+  )
   {
   }
 

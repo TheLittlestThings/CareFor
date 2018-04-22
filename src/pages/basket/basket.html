@@ -15,14 +15,8 @@
     Add more to basket
   </button>
   <ion-list id="basket-list1">
-    <ion-item color="none" id="basket-list-item22" *ngFor="let item of basketItems">
-      Item 1
-    </ion-item>
-    <ion-item color="none" id="basket-list-item23">
-      Item 2
-    </ion-item>
-    <ion-item color="none" id="basket-list-item24">
-      Item 3
+    <ion-item color="none" id="basket-list-item22" *ngFor="let item of service.basket.items">
+      {{item}}
     </ion-item>
   </ion-list>
   <button id="basket-button2" ion-button color="calm" block on-click="submitBasket()">

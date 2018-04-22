@@ -20,15 +20,19 @@ export class BasketPage {
 
   constructor(
     public navCtrl: NavController,
-    private provider : FreshdeskProvider
+    private provider : FreshdeskProvider,
+    private service : BasketService
   ) {
   }
   submitBasket(params) {
     if (!params) params = {};
-    
+
     // push basket to fresh desk
     this.provider.addBasket(this.basket);
 
     this.navCtrl.push(SubmittedPage);
-  }
+  }goToCareForCarsonCityNV(params){
+  if (!params) params = {};
+  this.navCtrl.push(CareForCarsonCityNVPage);
+}
 }
