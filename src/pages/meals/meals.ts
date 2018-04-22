@@ -8,7 +8,7 @@ import { SubmittedPage } from '../submitted/submitted';
 
 @Component({
   selector: 'page-meals',
-  templateUrl: 'src/pages/meals/meals.html'
+  templateUrl: 'meals.html'
 })
 export class MealsPage {
   // this tells the tabs component which Pages

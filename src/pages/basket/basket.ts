@@ -8,7 +8,7 @@ import { SubmittedPage } from '../submitted/submitted';
 
 @Component({
   selector: 'page-basket',
-  templateUrl: 'src/pages/basket/basket.html'
+  templateUrl: 'basket.html'
 })
 export class BasketPage {
   // this tells the tabs component which Pages

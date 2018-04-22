@@ -8,7 +8,7 @@ import { AssistancePage } from '../assistance/assistance';
 
 @Component({
   selector: 'page-submitted',
-  templateUrl: 'src/pages/submitted/submitted.html'
+  templateUrl: 'submitted.html'
 })
 export class SubmittedPage {
   // this tells the tabs component which Pages

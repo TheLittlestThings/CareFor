@@ -10,10 +10,10 @@ import { TabsControllerPage } from '../pages/tabs-controller/tabs-controller';
 
 
 @Component({
-  templateUrl: 'src/app/app.html'
+  templateUrl: 'app.html'
 })
 export class MyApp {
-  
+
   rootPage:any = TabsControllerPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
@@ -24,5 +24,5 @@ export class MyApp {
       splashScreen.hide();
     });
   }
-  
+
 }

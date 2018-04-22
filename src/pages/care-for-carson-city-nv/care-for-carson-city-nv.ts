@@ -8,7 +8,7 @@ import { AssistancePage } from '../assistance/assistance';
 
 @Component({
   selector: 'page-care-for-carson-city-nv',
-  templateUrl: 'src/pages/care-for-carson-city-nv/care-for-carson-city-nv.html'
+  templateUrl: 'care-for-carson-city-nv.html'
 })
 export class CareForCarsonCityNVPage {
   // this tells the tabs component which Pages

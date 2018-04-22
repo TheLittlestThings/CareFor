@@ -8,7 +8,7 @@ import { SubmittedPage } from '../submitted/submitted';
 
 @Component({
   selector: 'page-pet-food',
-  templateUrl: 'src/pages/pet-food/pet-food.html'
+  templateUrl: 'pet-food.html'
 })
 export class PetFoodPage {
   // this tells the tabs component which Pages
