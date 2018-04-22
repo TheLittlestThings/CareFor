@@ -6,7 +6,6 @@ import { PetFoodPage } from '../pet-food/pet-food';
 import { AssistancePage } from '../assistance/assistance';
 import { SubmittedPage } from '../submitted/submitted';
 import { BasketService } from '../../app/basket.service'
-import { FreshdeskProvider } from '../../providers/freshdesk'
 import { Basket } from '../../classes/basket'
 
 @Component({
@@ -20,7 +19,6 @@ export class BasketPage {
 
   constructor(
     public navCtrl: NavController,
-    private provider : FreshdeskProvider,
     private service : BasketService
   ) {
   }
@@ -28,7 +26,7 @@ export class BasketPage {
     if (!params) params = {};
 
     // push basket to fresh desk
-    this.provider.addBasket(this.basket);
+    this.service.submit();
 
     this.navCtrl.push(SubmittedPage);
   }goToCareForCarsonCityNV(params){

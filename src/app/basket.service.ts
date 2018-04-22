@@ -41,12 +41,15 @@ export class BasketService {
   }
 
   submit() {
-    this.http.post(this.freshdeskUrl,
+
+    console.log(this.basket);
+
+     return this.http.post(this.freshdeskUrl,
       this.basket,
       httpOptions).pipe(
         tap(_ => console.log())),
         catchError(this.handleError('addBasket'));
-    
+  
   }
 
   showItemsInBasket() {

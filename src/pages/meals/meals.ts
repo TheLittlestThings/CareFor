@@ -2,13 +2,11 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { BasketPage } from '../basket/basket';
 import { BasketService } from '../../app/basket.service';
-import { FreshdeskProvider } from '../../providers/freshdesk';
 
 
 @Component({
   selector: 'page-meals',
-  templateUrl: 'meals.html',
-  providers: [FreshdeskProvider]
+  templateUrl: 'meals.html'
 })
 
 export class MealsPage {
