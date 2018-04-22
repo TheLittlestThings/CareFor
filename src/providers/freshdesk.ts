@@ -5,21 +5,18 @@ import { Observable } from 'rxjs/Observable';
 import { catchError, tap } from 'rxjs/operators';
 import { of } from 'rxjs/observable/of';
 
+// TODO: do not burn in username password into code! Move to config file
+const userName : string = "zoe@tltnv.com";
+const password : string = "CareFor2018!";
+
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' , 
+  'Authorization' : 'Basic ' + userName + ":" + password})
 };
 
-/*
-  Generated class for the ProvidersFreshdeskProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class FreshdeskProvider {
-
   private freshdeskUrl = 'https://tltnv.freshdesk.com/api/v2/tickets';
-
   constructor(
     public http: HttpClient
   ) {
