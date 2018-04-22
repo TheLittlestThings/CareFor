@@ -31,11 +31,10 @@ export class BasketService {
   ) {
   }
 
-  getProfileFromStorage() : Profile {
+  getProfileFromStorage(): Profile {
     this.profile = JSON.parse(localStorage.getItem('profile'));
 
-    if (this.profile == undefined)
-    {
+    if (this.profile == undefined) {
       this.profile = new Profile();
       this.profile.allergies = '';
       this.profile.fullname = 'Unknown';
@@ -78,7 +77,7 @@ export class BasketService {
 
     ticket.description = this.basket.items.join();
     ticket.subject = 'ticket from website';
-    ticket.email =  Date.now() + "@careFor.org";
+    ticket.email = Date.now() + "@careFor.org";
     ticket.priority = 3;
     ticket.status = 2;
     ticket.name = p.fullname;

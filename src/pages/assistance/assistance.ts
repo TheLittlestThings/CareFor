@@ -16,6 +16,11 @@ export class AssistancePage {
     private service : BasketService
   ) {
   }
+
+  ngOnInit(){
+    console.log('assistance ngoninit');
+  }
+
   private value;
   addToBasket(params, item: string){
     console.log('form value:');

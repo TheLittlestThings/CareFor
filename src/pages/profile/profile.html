@@ -6,6 +6,7 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page3">
+  <ion-grid fixed>
   <form (ngSubmit)="saveProfile()">
       <ion-item>
           <ion-label>Full Name</ion-label>
@@ -21,4 +22,5 @@
             </ion-item>
     <button ion-button type="submit">Save Profile</button>
   </form>
+  </ion-grid>
 </ion-content>

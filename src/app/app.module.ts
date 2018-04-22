@@ -57,4 +57,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
-export class AppModule {}
+export class AppModule {
+  ngOnInit(){
+    console.log('app ngOninit');
+  }
+}

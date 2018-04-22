@@ -6,6 +6,7 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page9">
+    <ion-grid fixed>
   <ion-card id="assistance-card27" (click)="addToBasket({},'Touch Up Paint')">
     <ion-list>
       <ion-item color="none" id="assistance-list-item10">
@@ -30,46 +31,47 @@
       <img src="assets/img/CareFor_Assistance_MINORREPAIR.jpg" />
     </ion-list>
   </ion-card>
-  <ion-card #box id="assistance-card214" (click)="addToBasket({},'Social: ' + 'TODO: populate form data')">
+  <ion-card #box id="assistance-card214" (click)="addToBasket({},'Social')">
     <ion-list>
       <ion-item color="none" id="assistance-list-item18">
-        Social:
+        Social
       </ion-item>
-      <form id="assistance-form6">
+      <!-- <form id="assistance-form6">
         <ion-item id="assistance-input4">
           <ion-label></ion-label>
           <ion-input></ion-input>
         </ion-item>
-      </form>
+      </form> -->
       <img src="assets/img/CareFor_Assistance_SOCIAL.jpg"/>
     </ion-list>
   </ion-card>
-  <ion-card id="assistance-card215" (click)="addToBasket({},'Transportation to: ' + 'TODO: populate form data')">
+  <ion-card id="assistance-card215" (click)="addToBasket({},'Transportation')">
     <ion-list>
       <ion-item color="none" id="assistance-list-item19">
-        Transportation to:
+        Transportation
       </ion-item>
-      <form id="assistance-form7">
+      <!-- <form id="assistance-form7">
         <ion-item id="assistance-input5">
           <ion-label></ion-label>
           <ion-input type="text" placeholder=""></ion-input>
         </ion-item>
-      </form>
+      </form> -->
       <img src="assets/img/CareFor_Assistance_TRANSPORTATION.jpg" />
     </ion-list>
   </ion-card>
-  <ion-card id="assistance-card213" (click)="addToBasket({},'Something Else: ' + 'TODO: populate form data')">
+  <ion-card id="assistance-card213" (click)="addToBasket({},'Something Else')">
     <ion-list>
       <ion-item color="none" id="assistance-list-item17">
-        Something Else:
+        Something Else
       </ion-item>
-      <form id="assistance-form5">
+      <!-- <form id="assistance-form5">
         <ion-item id="assistance-input3">
           <ion-label></ion-label>
           <ion-input type="text" placeholder=""></ion-input>
         </ion-item>
-      </form>
+      </form> -->
       <img src="assets/img/CareFor_ASSISTANCE.jpg" />
     </ion-list>
   </ion-card>
+</ion-grid>
 </ion-content>
