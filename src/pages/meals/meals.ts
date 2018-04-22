@@ -18,20 +18,5 @@ export class MealsPage {
   goToBasket(params){
     if (!params) params = {};
     this.navCtrl.push(BasketPage);
-  }goToCareForCarsonCityNV(params){
-    if (!params) params = {};
-    this.navCtrl.push(CareForCarsonCityNVPage);
-  }goToMeals(params){
-    if (!params) params = {};
-    this.navCtrl.push(MealsPage);
-  }goToPetFood(params){
-    if (!params) params = {};
-    this.navCtrl.push(PetFoodPage);
-  }goToAssistance(params){
-    if (!params) params = {};
-    this.navCtrl.push(AssistancePage);
-  }goToSubmitted(params){
-    if (!params) params = {};
-    this.navCtrl.push(SubmittedPage);
   }
 }
