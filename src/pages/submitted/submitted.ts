@@ -19,7 +19,7 @@ export class SubmittedPage {
       return false;
   }
   goToHome(){
-    //TODO cannot currently nav back to home because ionViewCanLeave is false... fix this
-    this.navCtrl.goToRoot()
+    //TODO This makes a runtime error... fix this
+    this.navCtrl.goToRoot(null)
   }
 }
