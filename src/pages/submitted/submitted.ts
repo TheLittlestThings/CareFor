@@ -15,9 +15,9 @@ export class SubmittedPage {
   ) {
 
   }
-    ionViewCanLeave() : boolean{
-      return false;
-  }
+  //   ionViewCanLeave() : boolean{
+  //     return false;
+  // }
   goToHome(){
     //TODO This makes a runtime error... fix this
     this.navCtrl.goToRoot({})
