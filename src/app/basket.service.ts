@@ -1,13 +1,27 @@
 import { Injectable } from '@angular/core';
 import { Basket } from '../classes/basket';
-import { FreshdeskProvider } from '../providers/freshdesk';
+
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+import { catchError, tap } from 'rxjs/operators';
+import { of } from 'rxjs/observable/of';
+
 //import { getNonHydratedSegmentIfLinkAndUrlMatch } from 'ionic-angular/navigation/url-serializer';
+
+const userName : string = "zoe@tltnv.com";
+const password : string = "CareFor2018!";
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' , 
+  'Authorization' : 'Basic ' + userName + ":" + password})
+};
 
 @Injectable()
 export class BasketService {
   basket: Basket;
+  private freshdeskUrl = 'https://tltnv.freshdesk.com/api/v2/tickets';
   constructor(
-    private provider: FreshdeskProvider
+    public http: HttpClient
   ) {
   }
 
@@ -27,7 +41,12 @@ export class BasketService {
   }
 
   submit() {
-    this.provider.addBasket(this.basket);
+    this.http.post(this.freshdeskUrl,
+      this.basket,
+      httpOptions).pipe(
+        tap(_ => console.log())),
+        catchError(this.handleError('addBasket'));
+    
   }
 
   showItemsInBasket() {
@@ -36,5 +55,15 @@ export class BasketService {
     })
   }
 
-}
+  private handleError<T> (operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+  
+      // TODO: send the error to remote logging infrastructure
+      console.error(error); // log to console instead
+  
+      // Let the app keep running by returning an empty result.
+      return of(result as T);
+    };
+  }
 
+}

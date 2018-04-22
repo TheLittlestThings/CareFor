@@ -15,7 +15,6 @@ import { BasketService } from './basket.service'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { FreshdeskProvider } from '../providers/freshdesk';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -53,7 +52,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     StatusBar,
     SplashScreen,
     BasketService,
-    FreshdeskProvider,
     HttpClient,
     HttpClientModule,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
