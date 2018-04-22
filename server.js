@@ -2,7 +2,7 @@ var http = require("http"),
   url = require("url"),
   path = require("path"),
   fs = require("fs"),
-  port = process.argv[2] || 3000;
+  port = process.argv[2] || 1337;
 
 http.createServer(function(request, response) {
 
@@ -11,7 +11,6 @@ http.createServer(function(request, response) {
 
   fs.exists(filename, function(exists) {
     if(!exists) {
-      console.log('foo');
       response.writeHead(404, {"Content-Type": "text/plain"});
       response.write("404 Not Found\n");
       response.end();
