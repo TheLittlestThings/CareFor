@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Basket } from '../classes/basket';
 import { Ticket } from '../classes/ticket';
-
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { catchError, tap } from 'rxjs/operators';
@@ -11,6 +10,7 @@ import { noUndefined } from '@angular/compiler/src/util';
 
 //import { getNonHydratedSegmentIfLinkAndUrlMatch } from 'ionic-angular/navigation/url-serializer';
 
+// TODO: Move to config file!
 const userName: string = "zoe@tltnv.com";
 const password: string = "CareFor2018!";
 
@@ -30,17 +30,15 @@ export class BasketService {
   }
 
   addItemToBasket(item: string) {
-
     if (this.basket == undefined) {
       this.basket = new Basket();
 
-      if (this.basket.custom_fields == undefined)
-      {
+      if (this.basket.custom_fields == undefined) {
         this.basket.custom_fields =
-        {
-          cf_requester_phone_number : '',
-          cf_requestor_address  : ''
-        }
+          {
+            cf_requester_phone_number: '',
+            cf_requestor_address: ''
+          }
       }
 
       this.basket.custom_fields.cf_requester_phone_number = '';
@@ -57,8 +55,6 @@ export class BasketService {
     this.basket.items.splice(id, 1);
   }
 
-
-
   createTicketFromBasket(basket: Basket): Ticket {
     let ticket = new Ticket();
     ticket.description = this.basket.items.join();
@@ -68,13 +64,12 @@ export class BasketService {
     ticket.status = 2;
     ticket.name = 'Jane Doe';
 
-    if (ticket.custom_fields == undefined)
-    {
+    if (ticket.custom_fields == undefined) {
       ticket.custom_fields =
-      {
-        cf_requester_phone_number : '',
-        cf_requestor_address  : ''
-      }
+        {
+          cf_requester_phone_number: '',
+          cf_requestor_address: ''
+        }
     }
 
     ticket.custom_fields.cf_requester_phone_number = '555-555-5555';
@@ -84,28 +79,20 @@ export class BasketService {
     //ticket.custom_fields.cf_requestor_address = this.basket.custom_fields.cf_requestor_address;
 
     return ticket;
-
   }
 
-
   submit() {
-
     const headers = new HttpHeaders()
       .append("Authorization", "Basic " + btoa(userName + ":" + password))
       .append("Content-Type", "application/json");
 
-    console.log(headers);
-
     let ticket = this.createTicketFromBasket(this.basket);
-
-    console.log(ticket);
 
     return this.http.post(this.freshdeskUrl,
       ticket,
       { headers: headers }).subscribe(
         r => { console.log('resonse: ' + r); }
         , err => { console.log('error: ' + err); });
-
   }
 
   showItemsInBasket() {
