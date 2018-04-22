@@ -11,6 +11,7 @@ import { SettingsPage } from '../pages/settings/settings';
 import { TabsControllerPage } from '../pages/tabs-controller/tabs-controller';
 import { BasketPage } from '../pages/basket/basket';
 import { SubmittedPage } from '../pages/submitted/submitted';
+import { BasketService } from './basket.service'
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -49,6 +50,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    BasketService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

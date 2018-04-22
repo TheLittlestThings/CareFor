@@ -5,6 +5,7 @@ import { MealsPage } from '../meals/meals';
 import { PetFoodPage } from '../pet-food/pet-food';
 import { AssistancePage } from '../assistance/assistance';
 import { SubmittedPage } from '../submitted/submitted';
+import { BasketService } from '../../app/basket.service'
 
 @Component({
   selector: 'page-basket',
@@ -13,6 +14,8 @@ import { SubmittedPage } from '../submitted/submitted';
 export class BasketPage {
   // this tells the tabs component which Pages
   // should be each tab's root Page
+  basketItems = BasketService.basketItems;
+
   constructor(public navCtrl: NavController) {
   }
   goToCareForCarsonCityNV(params){

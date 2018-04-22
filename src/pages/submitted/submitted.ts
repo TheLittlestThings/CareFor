@@ -20,6 +20,6 @@ export class SubmittedPage {
   }
   goToHome(){
     //TODO This makes a runtime error... fix this
-    this.navCtrl.goToRoot(null)
+    this.navCtrl.goToRoot({})
   }
 }
