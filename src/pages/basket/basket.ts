@@ -18,23 +18,9 @@ export class BasketPage {
 
   constructor(public navCtrl: NavController) {
   }
-  goToCareForCarsonCityNV(params){
+  submitBasket(params) {
     if (!params) params = {};
-    this.navCtrl.push(CareForCarsonCityNVPage);
-  }goToMeals(params){
-    if (!params) params = {};
-    this.navCtrl.push(MealsPage);
-  }goToBasket(params){
-    if (!params) params = {};
-    this.navCtrl.push(BasketPage);
-  }goToPetFood(params){
-    if (!params) params = {};
-    this.navCtrl.push(PetFoodPage);
-  }goToAssistance(params){
-    if (!params) params = {};
-    this.navCtrl.push(AssistancePage);
-  }goToSubmitted(params){
-    if (!params) params = {};
+    //TODO put http provider here
     this.navCtrl.push(SubmittedPage);
   }
 }
