@@ -34,7 +34,7 @@ export class BasketService {
   getProfileFromStorage() : Profile {
     this.profile = JSON.parse(localStorage.getItem('profile'));
 
-    if (this.profile === undefined)
+    if (this.profile == undefined)
     {
       this.profile.allergies = '';
       this.profile.fullname = 'Unknown';
