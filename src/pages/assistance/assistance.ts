@@ -16,7 +16,10 @@ export class AssistancePage {
     private service : BasketService
   ) {
   }
+  private value;
   addToBasket(params, item: string){
+    console.log('form value:');
+    console.log(this.value);
     if (!params) params = {};
     this.service.addItemToBasket(item);
     this.navCtrl.push(BasketPage);
