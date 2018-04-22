@@ -11,17 +11,11 @@
   </h4>
   <div id="submitted-markdown1" class="show-list-numbers-and-dots">
     <p style="color:#000000;">
-      You askef for:
+      You asked for:
     </p>
     <ul>
-      <li>
-        Item 1
-      </li>
-      <li>
-        Item 2
-      </li>
-      <li>
-        Item 3
+      <li *ngFor="let item of service.basket.items">
+        {{item}}
       </li>
     </ul>
     <p style="color:#000000;">
