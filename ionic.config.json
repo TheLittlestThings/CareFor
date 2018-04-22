@@ -1,0 +1,8 @@
+{
+  "name": "CareFor",
+  "app_id": "5a0e2ef3",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
