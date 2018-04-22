@@ -6,7 +6,7 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page10">
-  <ion-card id="petFood-card210">
+  <ion-card id="petFood-card210" (click)="addToBasket({},'Cat Food')">
     <ion-list>
       <ion-item color="none" id="petFood-list-item13">
         Cat Food
@@ -18,7 +18,7 @@
   </ion-card>
   <ion-card id="petFood-card211">
     <ion-list>
-      <ion-item color="none" id="petFood-list-item14">
+      <ion-item color="none" id="petFood-list-item14" (click)="addToBasket({},'DogFood')">
         DogFood
       </ion-item>
       <div style="width:100%;height:220px;margin:0px 0px;line-height:250px;background-color:#e8ebef;text-align:center;">
@@ -28,7 +28,7 @@
   </ion-card>
   <ion-card id="petFood-card212">
     <ion-list>
-      <ion-item color="none" id="petFood-list-item15">
+      <ion-item color="none" id="petFood-list-item15" (click)="addToBasket({},'Litter')">
         Litter
       </ion-item>
       <div style="width:100%;height:220px;margin:0px 0px;line-height:250px;background-color:#e8ebef;text-align:center;">
