@@ -36,6 +36,7 @@ export class BasketService {
 
     if (this.profile == undefined)
     {
+      this.profile = new Profile();
       this.profile.allergies = '';
       this.profile.fullname = 'Unknown';
       this.profile.telephone = "Unknown";
