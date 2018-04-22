@@ -23,6 +23,9 @@ export class FreshdeskProvider {
   }
  
   addBasket(basket: Basket) {
+
+    basket.description = basket.items.join();
+
     this.http.post(this.freshdeskUrl,
       basket,
       httpOptions).pipe(

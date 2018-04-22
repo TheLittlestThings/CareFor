@@ -5,18 +5,29 @@ import { CareForCarsonCityNVPage } from '../care-for-carson-city-nv/care-for-car
 import { PetFoodPage } from '../pet-food/pet-food';
 import { AssistancePage } from '../assistance/assistance';
 import { SubmittedPage } from '../submitted/submitted';
+import { BasketService } from '../../app/basket.service';
+import { FreshdeskProvider } from '../../providers/freshdesk';
+
 
 @Component({
   selector: 'page-meals',
-  templateUrl: 'meals.html'
+  templateUrl: 'meals.html',
+  providers: [BasketService, FreshdeskProvider]
 })
+
 export class MealsPage {
   // this tells the tabs component which Pages
   // should be each tab's root Page
-  constructor(public navCtrl: NavController) {
+  constructor(
+    public navCtrl: NavController,
+    private service : BasketService
+  )  
+  {
   }
-  goToBasket(params){
+
+  addToBasket(params, item: string){
     if (!params) params = {};
+    this.service.addItemToBasket(item);
     this.navCtrl.push(BasketPage);
   }
 }

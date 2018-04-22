@@ -13,9 +13,10 @@ import { BasketPage } from '../pages/basket/basket';
 import { SubmittedPage } from '../pages/submitted/submitted';
 import { BasketService } from './basket.service'
 
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { FreshdeskProvider } from '../providers/freshdesk';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -51,6 +53,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     StatusBar,
     SplashScreen,
     BasketService,
+    FreshdeskProvider,
+    HttpClient,
+    HttpClientModule,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
