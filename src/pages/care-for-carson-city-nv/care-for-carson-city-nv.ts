@@ -18,15 +18,6 @@ export class CareForCarsonCityNVPage {
   goToMeals(params){
     if (!params) params = {};
     this.navCtrl.push(MealsPage);
-  }goToBasket(params){
-    if (!params) params = {};
-    this.navCtrl.push(BasketPage);
-  }goToCareForCarsonCityNV(params){
-    if (!params) params = {};
-    this.navCtrl.push(CareForCarsonCityNVPage);
-  }goToSubmitted(params){
-    if (!params) params = {};
-    this.navCtrl.push(SubmittedPage);
   }goToPetFood(params){
     if (!params) params = {};
     this.navCtrl.push(PetFoodPage);
