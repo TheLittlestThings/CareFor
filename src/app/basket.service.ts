@@ -7,6 +7,7 @@ import { catchError, tap } from 'rxjs/operators';
 import { of } from 'rxjs/observable/of';
 import { BasketPage } from '../pages/basket/basket';
 import { noUndefined } from '@angular/compiler/src/util';
+import { Profile } from '../classes/profile';
 
 //import { getNonHydratedSegmentIfLinkAndUrlMatch } from 'ionic-angular/navigation/url-serializer';
 
@@ -23,10 +24,24 @@ const httpOptions = {
 @Injectable()
 export class BasketService {
   basket: Basket;
+  profile: Profile;
   private freshdeskUrl = 'https://tltnv.freshdesk.com/api/v2/tickets';
   constructor(
     public http: HttpClient
   ) {
+  }
+
+  getProfileFromStorage() : Profile {
+    this.profile = JSON.parse(localStorage.getItem('profile'));
+
+    if (this.profile === undefined)
+    {
+      this.profile.allergies = '';
+      this.profile.fullname = 'Unknown';
+      this.profile.telephone = "Unknown";
+    }
+
+    return this.profile;
   }
 
   addItemToBasket(item: string) {
@@ -56,13 +71,16 @@ export class BasketService {
   }
 
   createTicketFromBasket(basket: Basket): Ticket {
+
+    let p = this.getProfileFromStorage();
     let ticket = new Ticket();
+
     ticket.description = this.basket.items.join();
     ticket.subject = 'ticket from website';
     ticket.email = "test@careFor.org";
     ticket.priority = 3;
     ticket.status = 2;
-    ticket.name = 'Jane Doe';
+    ticket.name = p.fullname;
 
     if (ticket.custom_fields == undefined) {
       ticket.custom_fields =
@@ -72,7 +90,7 @@ export class BasketService {
         }
     }
 
-    ticket.custom_fields.cf_requester_phone_number = '555-555-5555';
+    ticket.custom_fields.cf_requester_phone_number = p.telephone;
     ticket.custom_fields.cf_requestor_address = '123 Test Street Anywhere, USA';
 
     //ticket.custom_fields.cf_requester_phone_number = this.basket.custom_fields.cf_requester_phone_number;
@@ -87,6 +105,8 @@ export class BasketService {
       .append("Content-Type", "application/json");
 
     let ticket = this.createTicketFromBasket(this.basket);
+
+    console.log(ticket);
 
     return this.http.post(this.freshdeskUrl,
       ticket,

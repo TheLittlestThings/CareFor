@@ -5,4 +5,20 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding id="page3"></ion-content>
+<ion-content padding id="page3">
+  <form (ngSubmit)="saveProfile()">
+      <ion-item>
+          <ion-label>Full Name</ion-label>
+          <ion-input type="text" [(ngModel)]="profile.fullname" name="fullname"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Telephone Number</ion-label>
+            <ion-input type="text" [(ngModel)]="profile.telephone" name="telephone"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label>Allergies</ion-label>
+              <ion-input type="text" [(ngModel)]="profile.allergies" name="allergies"></ion-input>
+            </ion-item>
+    <button ion-button type="submit">Save Profile</button>
+  </form>
+</ion-content>
