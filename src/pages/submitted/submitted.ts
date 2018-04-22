@@ -3,7 +3,6 @@ import { NavController } from 'ionic-angular';
 import { CareForCarsonCityNVPage } from '../care-for-carson-city-nv/care-for-carson-city-nv';
 import { MealsPage } from '../meals/meals';
 import { BasketPage } from '../basket/basket';
-import { SubmittedPage } from './submitted';
 import { PetFoodPage } from '../pet-food/pet-food';
 import { AssistancePage } from '../assistance/assistance';
 

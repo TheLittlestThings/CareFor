@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { BasketPage } from '../basket/basket';
 import { CareForCarsonCityNVPage } from '../care-for-carson-city-nv/care-for-carson-city-nv';
-import { MealsPage } from './meals';
 import { PetFoodPage } from '../pet-food/pet-food';
 import { AssistancePage } from '../assistance/assistance';
 import { SubmittedPage } from '../submitted/submitted';
